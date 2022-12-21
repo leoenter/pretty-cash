@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang='en-us'>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width" initial-scale='1.0'>
+	<meta name = 'author' content='leonel'>
+	<meta name = 'description' content='pretty cash app'>
+	<style type="text/css">
+		
+		body {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif monospace;
+			background-image: url(https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80) ;
+			background-repeat: no-repeat;
+			background-size: cover;
+			display: flex;
+			justify-content: center;
+		    align-items: center;
+		    height: 100vh;
+
+		}
+
+		.container {
+			background-color: tan;
+			max-width: 500px;
+	       
+			padding: 5em;
+			position: relative;
+			border: 2px double blue;
+			
+
+		}
+        button {
+        	display: inline-block;
+        	width: 100px;
+        	border: none;
+        	font-weight: bold;
+        	padding: 6px 12px;
+        	border-radius: 8px;
+        	color: white;
+        	cursor: pointer;
+        }
+           #depo-el{
+           	background-color: green;
+           	position: absolute;
+           	bottom: 5px;
+           	left: 20px;
+
+           }
+
+            #save-el{
+           	background-color: blue;
+           	position: absolute;
+           	bottom: 5px;
+           	right: 20px;
+           }
+
+           .flex {
+           	display: flex;
+           	justify-content: space-between;
+           	align-items: center;
+           }
+
+          
+
+         
+
+	</style>
+ 
+</head>
+
+<body>
+
+	<div class="container">
+		<h1>Pretty Cash</h1>
+		
+		<div class='flex'>
+			<h2>income</h2>
+			<p id='show-inc'></p>
+		</div>
+        
+        <div class='flex'>
+	        <h2>Total save</h2>
+			<p id='show-sav'></p>
+		</div>
+	    
+		<button id='depo-el'>Deposit</button>
+		<button id='save-el'>Save</button>
+		
+	</div>
+	
+
+
+	<script  type="text/javascript" defer>
+     	let depoEl = document.getElementById('depo-el'); 
+     	let saveEl = document.getElementById('save-el'); 
+     	let showInc = document.getElementById('show-inc');
+     	let showSav = document.getElementById('show-sav');
+     	
+     	let depo = 0;
+     	let save = 0;
+       
+       
+       	depoEl.addEventListener('click',function(){
+          
+             depo += 1;
+             showInc.textContent = depo + '$';
+           
+       	});
+       
+       	saveEl.addEventListener('click',function(){
+          
+             save += depo;
+             
+              showInc.textContent = 0;
+              depo = 0;
+           showSav.textContent = save + '$';
+           
+
+       	});
+              
+	</script>
+</body>
+</html>
